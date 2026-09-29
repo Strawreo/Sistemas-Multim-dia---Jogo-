@@ -6,6 +6,8 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_f6wxy"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_k41lo"]
+
 [node name="Player" type="CharacterBody3D" unique_id=576362641]
 script = ExtResource("1_xjclr")
 
@@ -15,5 +17,9 @@ shape = SubResource("CapsuleShape3D_ms4e4")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=237587885]
 mesh = SubResource("CapsuleMesh_f6wxy")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1225741193]
-transform = Transform3D(1, 0, 0, 0, 0.9798283, 0.19984113, 0, -0.19984113, 0.9798283, 0.75439954, 1.3672305, 2.2620177)
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=476963484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("SphereShape3D_k41lo")
+spring_length = 4.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D" unique_id=1225741193]
