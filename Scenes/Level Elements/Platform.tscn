@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ba0g5lcgdb25g"]
+
+[ext_resource type="Script" uid="uid://b1ejbcrfleirw" path="res://Scenes/Level Elements/platform.gd" id="1_60yb7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ungyi"]
+size = Vector3(2.2315674, 1, 6.732544)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k41lo"]
+size = Vector3(1.7615967, 1, 6.239868)
+
+[node name="Platform" type="AnimatableBody3D" unique_id=2023146935]
+script = ExtResource("1_60yb7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=667319237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.270813, 0, 0)
+shape = SubResource("BoxShape3D_ungyi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=162990874]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3766837, -0.11218858, -0.15301514)
+mesh = SubResource("BoxMesh_k41lo")

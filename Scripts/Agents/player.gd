@@ -18,7 +18,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		spring_arm.rotation.x -= event.relative.y * mouse_sensitivity
 		
 		#limita o ângulo de visão para impedir um 360
-		spring_arm.rotation.x = clamp(spring_arm.rotation.x, deg_to_rad(-75), deg_to_rad(45))
+		spring_arm.rotation.x = clamp(spring_arm.rotation.x, deg_to_rad(-75), deg_to_rad(35))
 		
 		#pra fechar o jogo, depois mover para o script globals
 	if event.is_action_pressed("ui_cancel"):
@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 	if look_dir.length() > 0:
 		spring_arm.rotation.y -= look_dir.x * gamepad_sensitivity * delta
 		spring_arm.rotation.x -= look_dir.y * gamepad_sensitivity * delta
-		spring_arm.rotation.x = clamp(spring_arm.rotation.x, deg_to_rad(-75), deg_to_rad(45))
+		spring_arm.rotation.x = clamp(spring_arm.rotation.x, deg_to_rad(-75), deg_to_rad(35))
 
 	
 	if not is_on_floor():

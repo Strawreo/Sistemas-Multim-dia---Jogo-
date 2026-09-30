@@ -19,7 +19,9 @@ mesh = SubResource("CapsuleMesh_f6wxy")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=476963484]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+collision_mask = 2
 shape = SubResource("SphereShape3D_k41lo")
 spring_length = 4.0
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D" unique_id=1225741193]
+near = 0.01
