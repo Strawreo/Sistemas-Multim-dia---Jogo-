@@ -6,10 +6,10 @@ const JUMP_VELOCITY = 4.5
 @export var gamepad_sensitivity := 2.5
 
 @onready var spring_arm: SpringArm3D = $SpringArm3D
-@onready var mesh: MeshInstance3D = $MeshInstance3D
+@onready var mesh: Node3D = $CharacterBody
 
 func _ready() -> void:
-	#oculta o mouse na tela
+	$CharacterBody/AnimationPlayer.play("idle")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -38,6 +38,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		$CharacterBody/AnimationPlayer.play("jump")
 		velocity.y = JUMP_VELOCITY
 
 
@@ -58,6 +59,7 @@ func _physics_process(delta: float) -> void:
 		var look_angle = atan2(-velocity.x, -velocity.z)
 		mesh.rotation.y = lerp_angle(mesh.rotation.y, look_angle, 10 * delta)
 	else:
+		$CharacterBody/AnimationPlayer.play("walk")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 

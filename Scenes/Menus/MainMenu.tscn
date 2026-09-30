@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bf57wxovecdm6" path="res://Scripts/Menus/main_menu.gd" id="1_b42ut"]
 [ext_resource type="Script" uid="uid://dw61x4bn4ngqe" path="res://Scripts/Menus/start.gd" id="1_v3fht"]
+[ext_resource type="PackedScene" uid="uid://dkrjfd5axks6o" path="res://Scenes/Menus/Credits.tscn" id="3_hqtmt"]
 
 [node name="MainMenu" type="Control" unique_id=2135785271]
+z_index = 4
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,6 +46,13 @@ text = "Credits"
 layout_mode = 2
 text = "Quit"
 
+[node name="Credits" parent="." unique_id=2090793945 instance=ExtResource("3_hqtmt")]
+z_index = 3
+layout_mode = 1
+
 [connection signal="pressed" from="HBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="HBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="HBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Credits/VBoxContainer/Volta" to="." method="_on_volta_pressed"]
+
+[editable path="Credits"]

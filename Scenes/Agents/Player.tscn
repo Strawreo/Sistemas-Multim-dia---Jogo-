@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cctllm37ujwto"]
 
 [ext_resource type="Script" uid="uid://c5ramms1sit63" path="res://Scripts/Agents/player.gd" id="1_xjclr"]
+[ext_resource type="PackedScene" uid="uid://xy8rvnjp22n5" path="res://Assets/models/character.glb" id="2_4q1rs"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ms4e4"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_f6wxy"]
+height = 1.2154541
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_k41lo"]
 
@@ -12,10 +12,25 @@
 script = ExtResource("1_xjclr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1831706605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50795615, 0)
 shape = SubResource("CapsuleShape3D_ms4e4")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=237587885]
-mesh = SubResource("CapsuleMesh_f6wxy")
+[node name="CharacterBody" parent="." unique_id=1529023801 instance=ExtResource("2_4q1rs")]
+
+[node name="leg-left" parent="CharacterBody/character/root" parent_id_path=PackedInt32Array(1529023801, 1535849376) index="0" unique_id=1832476716]
+transform = Transform3D(0.9659258, 0, 0.25881907, 0, 1, 0, -0.25881907, 0, 0.9659258, 0.125, 0.17625, -0.02375)
+
+[node name="leg-right" parent="CharacterBody/character/root" parent_id_path=PackedInt32Array(1529023801, 1535849376) index="1" unique_id=675573476]
+transform = Transform3D(0.9659258, 0, -0.25881907, 0, 1, 0, 0.25881907, 0, 0.9659258, -0.125, 0.17625, -0.023750002)
+
+[node name="torso" parent="CharacterBody/character/root" parent_id_path=PackedInt32Array(1529023801, 1535849376) index="2" unique_id=628108035]
+transform = Transform3D(1, 0, 0, 0, 0.9961947, 0.08715574, 0, -0.08715574, 0.9961947, -1.8047786e-15, 0.17625, -0.02375)
+
+[node name="arm-left" parent="CharacterBody/character/root/torso" index="0" unique_id=1041091728]
+transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 0.3, 0.17500001, 0)
+
+[node name="arm-right" parent="CharacterBody/character/root/torso" index="1" unique_id=178014771]
+transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, -0.3, 0.1195, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=476963484]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -25,3 +40,5 @@ spring_length = 4.0
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D" unique_id=1225741193]
 near = 0.01
+
+[editable path="CharacterBody"]

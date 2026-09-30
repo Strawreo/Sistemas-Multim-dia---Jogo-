@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cmnovjecqtw5x"]
+
+[ext_resource type="PackedScene" uid="uid://xy8rvnjp22n5" path="res://Assets/models/character.glb" id="1_iv5vp"]
+
+[node name="character2" unique_id=1529023801 instance=ExtResource("1_iv5vp")]
+
+[node name="arm-left" parent="character/root/torso" parent_id_path=PackedInt32Array(628108035) index="0" unique_id=1041091728]
+transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 0.3, 0.17500001, 0)
+
+[node name="arm-right" parent="character/root/torso" parent_id_path=PackedInt32Array(628108035) index="1" unique_id=178014771]
+transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, -0.3, 0.1195, 0)
