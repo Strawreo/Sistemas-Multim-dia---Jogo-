@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://xy8rvnjp22n5" path="res://Assets/models/character.glb" id="2_4q1rs"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ms4e4"]
-height = 1.2154541
+height = 1.1148987
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_k41lo"]
 
@@ -12,7 +12,7 @@ height = 1.2154541
 script = ExtResource("1_xjclr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1831706605]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50795615, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55823386, 0)
 shape = SubResource("CapsuleShape3D_ms4e4")
 
 [node name="CharacterBody" parent="." unique_id=1529023801 instance=ExtResource("2_4q1rs")]
@@ -28,10 +28,10 @@ transform = Transform3D(0.9659258, 0, -0.25881907, 0, 1, 0, 0.25881907, 0, 0.965
 transform = Transform3D(1, 0, 0, 0, 0.9961947, 0.08715574, 0, -0.08715574, 0.9961947, -1.8047786e-15, 0.17625, -0.02375)
 
 [node name="arm-left" parent="CharacterBody/character/root/torso" index="0" unique_id=1041091728]
-transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 0.3, 0.17500001, 0)
+transform = Transform3D(0.7071067, 0.7071067, 0, -0.7071067, 0.7071067, 0, 0, 0, 1, 0.3, 0.17500001, 0)
 
 [node name="arm-right" parent="CharacterBody/character/root/torso" index="1" unique_id=178014771]
-transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, -0.3, 0.1195, 0)
+transform = Transform3D(0.7071067, -0.7071067, 0, 0.7071067, 0.7071067, 0, 0, 0, 1, -0.3, 0.1195, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=476963484]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)

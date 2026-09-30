@@ -45,8 +45,9 @@ grow_vertical = 2
 [node name="Parte Prática" type="Label" parent="HBoxContainer" unique_id=1301251978]
 layout_mode = 2
 text = "- Parte Prática
-Eryck Emmanuel - Programador 
-Artur - Programador "
+Artur 
+Eryck Emmanuel 
+"
 label_settings = SubResource("LabelSettings_f6wxy")
 
 [node name="Parte Teórica" type="Label" parent="HBoxContainer" unique_id=360096369]
