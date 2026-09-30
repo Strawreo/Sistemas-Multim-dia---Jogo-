@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://c78gvcksd7g16"]
 
 [ext_resource type="PackedScene" uid="uid://cctllm37ujwto" path="res://Scenes/Agents/Player.tscn" id="1_cp10e"]
+[ext_resource type="Script" uid="uid://cjl4h7e6nqjbx" path="res://Scenes/Level Elements/Pause.gd" id="1_ybqp2"]
 [ext_resource type="PackedScene" uid="uid://d2dcaklvi75yp" path="res://Scenes/Level Elements/Ground.tscn" id="2_q8yj7"]
 [ext_resource type="PackedScene" uid="uid://7kft06coybor" path="res://Scenes/Level Elements/Light.tscn" id="3_87l2y"]
 [ext_resource type="PackedScene" uid="uid://ba0g5lcgdb25g" path="res://Scenes/Level Elements/Platform.tscn" id="4_87l2y"]
+[ext_resource type="PackedScene" uid="uid://cnfbm3x14601m" path="res://Scenes/Menus/Pause.tscn" id="5_qpfou"]
 
 [node name="Level1" type="Node3D" unique_id=1999802002]
+
+[node name="Pause" parent="." unique_id=881999419 instance=ExtResource("5_qpfou")]
+process_mode = 3
+script = ExtResource("1_ybqp2")
 
 [node name="Player" parent="." unique_id=1481033572 instance=ExtResource("1_cp10e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7097812, 5.40803, 4.364872)
