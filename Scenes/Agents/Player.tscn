@@ -16,6 +16,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50795615, 0)
 shape = SubResource("CapsuleShape3D_ms4e4")
 
 [node name="CharacterBody" parent="." unique_id=1529023801 instance=ExtResource("2_4q1rs")]
+transform = Transform3D(0.99976355, 0, 0.021744266, 0, 1, 0, -0.021744266, 0, 0.99976355, 0, 0, 0)
 
 [node name="leg-left" parent="CharacterBody/character/root" parent_id_path=PackedInt32Array(1529023801, 1535849376) index="0" unique_id=1832476716]
 transform = Transform3D(0.9659258, 0, 0.25881907, 0, 1, 0, -0.25881907, 0, 0.9659258, 0.125, 0.17625, -0.02375)
