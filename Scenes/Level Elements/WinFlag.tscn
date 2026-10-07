@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cj205j7xu3xo3"]
+
+[ext_resource type="Script" uid="uid://cevc3enhl6xes" path="res://Scripts/Agents/win_flag.gd" id="1_kjg1d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ms4e4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ms4e4"]
+
+[node name="WinFlag" type="Node3D" unique_id=740944745]
+script = ExtResource("1_kjg1d")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=2130304211]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1403861988]
+shape = SubResource("BoxShape3D_ms4e4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=1658866013]
+mesh = SubResource("BoxMesh_ms4e4")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

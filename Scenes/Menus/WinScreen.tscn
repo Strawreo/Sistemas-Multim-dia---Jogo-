@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://3rbsprwc2315"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k7ht4"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="WinScreen" type="Control" unique_id=1309274385]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1548319538]
+layout_mode = 0
+offset_right = 1310.0
+offset_bottom = 717.0
+color = Color(1, 1, 1, 0.5372549)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=797148067]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -29.0
+offset_right = 51.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Paused" type="Label" parent="VBoxContainer" unique_id=845732093]
+layout_mode = 2
+text = "Level Won!"
+label_settings = SubResource("LabelSettings_k7ht4")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=988766820]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="NextLevel" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1984263330]
+layout_mode = 2
+text = "Next"
+
+[node name="MainMenu" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1880937681]
+layout_mode = 2
+text = "Menu"

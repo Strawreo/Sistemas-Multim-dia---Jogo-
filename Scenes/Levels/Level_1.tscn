@@ -4,14 +4,21 @@
 [ext_resource type="Script" uid="uid://cjl4h7e6nqjbx" path="res://Scenes/Level Elements/Pause.gd" id="1_ybqp2"]
 [ext_resource type="PackedScene" uid="uid://d2dcaklvi75yp" path="res://Scenes/Level Elements/Ground.tscn" id="2_q8yj7"]
 [ext_resource type="PackedScene" uid="uid://7kft06coybor" path="res://Scenes/Level Elements/Light.tscn" id="3_87l2y"]
+[ext_resource type="PackedScene" uid="uid://3rbsprwc2315" path="res://Scenes/Menus/WinScreen.tscn" id="3_hs11j"]
 [ext_resource type="PackedScene" uid="uid://ba0g5lcgdb25g" path="res://Scenes/Level Elements/Platform.tscn" id="4_87l2y"]
+[ext_resource type="Script" uid="uid://cs2uj4jej6p1t" path="res://Scripts/Menus/win_screen.gd" id="4_o5ofx"]
 [ext_resource type="PackedScene" uid="uid://cnfbm3x14601m" path="res://Scenes/Menus/Pause.tscn" id="5_qpfou"]
+[ext_resource type="PackedScene" uid="uid://cj205j7xu3xo3" path="res://Scenes/Level Elements/WinFlag.tscn" id="7_iyh3f"]
 
 [node name="Level1" type="Node3D" unique_id=1999802002]
 
 [node name="Pause" parent="." unique_id=881999419 instance=ExtResource("5_qpfou")]
 process_mode = 3
 script = ExtResource("1_ybqp2")
+
+[node name="WinScreen" parent="." unique_id=1309274385 instance=ExtResource("3_hs11j")]
+process_mode = 3
+script = ExtResource("4_o5ofx")
 
 [node name="Player" parent="." unique_id=1481033572 instance=ExtResource("1_cp10e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7097812, 5.40803, 4.364872)
@@ -24,3 +31,54 @@ shadow_enabled = true
 
 [node name="Platform" parent="." unique_id=168723649 instance=ExtResource("4_87l2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5044985, -9.536743e-07, 9.037392)
+
+[node name="Platform2" parent="." unique_id=2023146935 instance=ExtResource("4_87l2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.463139, -9.536743e-07, 9.037392)
+move_distance = 10.0
+move_speed = 3.0
+
+[node name="Platform3" parent="." unique_id=1008923608 instance=ExtResource("4_87l2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.463139, -9.536743e-07, 16.961538)
+move_distance = 3.0
+move_speed = 0.5
+
+[node name="Platform4" parent="." unique_id=2098634244 instance=ExtResource("4_87l2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.762958, -9.536743e-07, 9.037392)
+move_distance = 2.5
+move_speed = 2.5
+
+[node name="Platform" parent="Platform4" unique_id=475160045 instance=ExtResource("4_87l2y")]
+transform = Transform3D(-0.9998425, 0, -0.017743038, 0, 1, 0, 0.017743038, 0, -0.9998425, -0.011539459, -9.536743e-07, 15.445915)
+
+[node name="Platform2" parent="Platform4" unique_id=1033734957 instance=ExtResource("4_87l2y")]
+transform = Transform3D(-0.9998425, 0, -0.017743038, 0, 1, 0, 0.017743038, 0, -0.9998425, 3.9464788, -9.536743e-07, 15.375675)
+move_distance = 10.0
+move_speed = 3.0
+
+[node name="Platform4" parent="Platform4" unique_id=718524488 instance=ExtResource("4_87l2y")]
+transform = Transform3D(-0.9998425, 0, -0.017743038, 0, 1, 0, 0.017743038, 0, -0.9998425, 7.2457767, -9.536743e-07, 15.317127)
+move_distance = 2.5
+move_speed = 2.5
+
+[node name="Platform5" parent="Platform4" unique_id=720574368 instance=ExtResource("4_87l2y")]
+transform = Transform3D(-0.9998425, 0, -0.017743038, 0, 1, 0, 0.017743038, 0, -0.9998425, 4.0771255, -9.536743e-07, 22.737812)
+move_distance = 6.0
+move_speed = 1.0
+
+[node name="Platform5" parent="." unique_id=1231520350 instance=ExtResource("4_87l2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.463139, -9.536743e-07, 1.6740971)
+move_distance = 6.0
+move_speed = 1.0
+
+[node name="WinFlag" parent="." unique_id=740944745 instance=ExtResource("7_iyh3f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.730257, 7.7701116, 14.944722)
+
+[node name="Ground2" parent="." unique_id=197431484 instance=ExtResource("2_q8yj7")]
+transform = Transform3D(0.55999523, 0, 0, 0, 1.2031982, 0, 0, 0, 0.7883608, -44.95444, 5.8067684, 5.6765003)
+
+[connection signal="pressed" from="WinScreen/VBoxContainer/HBoxContainer/NextLevel" to="WinScreen" method="_on_next_level_pressed"]
+[connection signal="pressed" from="WinScreen/VBoxContainer/HBoxContainer/MainMenu" to="WinScreen" method="_on_main_menu_pressed"]
+[connection signal="body_entered" from="WinFlag/Area3D" to="WinScreen" method="_on_area_3d_body_entered"]
+
+[editable path="WinScreen"]
+[editable path="WinFlag"]
